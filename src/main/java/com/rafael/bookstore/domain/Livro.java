@@ -26,14 +26,14 @@ public class Livro implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
-	private String categoria;
+	private Categoria categoria;
 
 	public Livro() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Livro(Integer id, String titulo, String nome_autor, String texto, String categoria) {
+	public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -74,11 +74,11 @@ public class Livro implements Serializable{
 		this.texto = texto;
 	}
 
-	public String getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 
