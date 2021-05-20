@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rafael.bookstore.domain.Categoria;
 import com.rafael.bookstore.service.CategoriaService;
 
+import javassist.tools.rmi.ObjectNotFoundException;
+
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
@@ -18,7 +20,7 @@ public class CategoriaResource {
 	private CategoriaService service;
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Categoria> findById(@PathVariable Integer id){
+	public ResponseEntity<Categoria> findById(@PathVariable Integer id) throws ObjectNotFoundException{
 		Categoria obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 		
