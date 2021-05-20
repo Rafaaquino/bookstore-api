@@ -39,4 +39,10 @@ public class CategoriaService {
 		return repository.save(obj);
 	}
 
+	public void delete(Integer id) throws ObjectNotFoundException {
+		findById(id);
+		repository.deleteById(id);
+		
+	}
+
 }
